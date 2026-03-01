@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#EAF7F6" />
-  <meta name="description" content="Юлия Михайловна — репетитор для дошкольников. Подготовка к школе с любовью. Опыт 15 лет." />
+  <meta name="description" content="Подготовка к школе в Курске. Репетитор для дошкольников 5–7 лет. Опыт 15 лет, индивидуальные занятия 500 руб. Обучение чтению, счету, письму в Курске. Запись по телефону +7 (906) 576-44-31." />
 
-  <title>Юлия Михайловна — подготовка дошкольников к школе</title>
+  <title>Репетитор дошкольников в Курске – подготовка к школе, Юлия Михайловна</title>
   <link rel="icon" href="assets/favicon.ico" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -452,6 +452,73 @@
       font-size: 15px;
     }
 
+    .blog-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .blog-card {
+      grid-column: span 6;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(28, 42, 46, 0.08);
+      box-shadow: 0 10px 26px rgba(16, 24, 40, 0.07);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 44px rgba(16, 24, 40, 0.12);
+    }
+
+    .blog-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(179, 231, 225, 0.35);
+      border: 1px solid rgba(28, 42, 46, 0.10);
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .blog-card__title {
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.2px;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .blog-card__text {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .blog-card__meta {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: rgba(28, 42, 46, 0.65);
+      font-weight: 600;
+      background: rgba(185, 214, 255, 0.26);
+      border: 1px solid rgba(28, 42, 46, 0.08);
+      padding: 6px 12px;
+      border-radius: 999px;
+      width: fit-content;
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .blog-card { grid-column: span 12; }
+    }
+
     .contacts {
       padding: 26px;
       background: linear-gradient(135deg, rgba(179, 231, 225, 0.26), rgba(185, 214, 255, 0.18));
@@ -714,6 +781,7 @@
           <a href="#about">О себе</a>
           <a href="#services">Услуги</a>
           <a href="#why">Почему мы</a>
+          <a href="#blog">Полезное</a>
           <a href="#contacts">Контакты</a>
         </nav>
       </div>
@@ -725,8 +793,8 @@
       <div class="container">
         <div class="hero card reveal">
           <div>
-            <h1 class="hero__title intro-title">Юлия Михайловна</h1>
-            <p class="hero__subtitle intro-pop">Репетитор для дошкольников. Подготовка к школе с любовью. Опыт 15 лет.</p>
+            <h1 class="hero__title intro-title">Репетитор дошкольников в Курске – Юлия Михайловна</h1>
+            <p class="hero__subtitle intro-pop">Подготовка к школе в Курске для детей 5–7 лет. Индивидуальные занятия с опытом 15 лет. Работаю в Курске — район уточните при звонке.</p>
 
             <div class="hero__bullets intro-pop" aria-label="Преимущества">
               <div class="bullet">
@@ -772,7 +840,7 @@
 
           <div>
             <h2 class="section-title">Привет! Меня зовут Юлия Михайловна</h2>
-            <p class="section-lead">Я дипломированный педагог с 15-летним стажем. Мои ученики приходят в школу подготовленными, уверенными в себе и с интересом к учебе. Нахожу подход к каждому ребенку, превращая обучение в увлекательную игру.</p>
+            <p class="section-lead">Я дипломированный педагог с 15-летним стажем подготовки дошкольников к школе в Курске. Работаю в Курске (район можно уточнить при звонке) и онлайн. Мои ученики приходят в школу подготовленными, уверенными в себе и с интересом к учебе. Нахожу подход к каждому ребенку, превращая обучение в увлекательную игру.</p>
           </div>
         </div>
       </div>
@@ -785,27 +853,27 @@
 
         <div class="grid" role="list">
           <article class="service reveal" role="listitem" data-stagger="services">
-            <h3 class="service__title">Индивидуальные занятия</h3>
+            <h3 class="service__title">Индивидуальные занятия в Курске</h3>
             <div class="service__meta">45 мин / 500 руб</div>
-            <p class="service__desc">Программа под способности ребенка.</p>
+            <p class="service__desc">Программа под способности ребенка. Персональная подготовка к школе в Курске.</p>
           </article>
 
           <article class="service reveal" role="listitem" data-stagger="services">
-            <h3 class="service__title">Подготовка к школе (5–7 лет)</h3>
+            <h3 class="service__title">Подготовка к школе в Курске (5–7 лет)</h3>
             <div class="service__meta">60 мин / 500 руб</div>
-            <p class="service__desc">Чтение, счет, письмо, логика.</p>
+            <p class="service__desc">Чтение, счет, письмо, логика. Комплексная подготовка дошкольников в Курске.</p>
           </article>
 
           <article class="service reveal" role="listitem" data-stagger="services">
-            <h3 class="service__title">Мини-группа (до 4 чел)</h3>
+            <h3 class="service__title">Мини-группа в Курске (до 4 чел)</h3>
             <div class="service__meta">60 мин / 500 руб</div>
-            <p class="service__desc">Социализация и обучение в команде.</p>
+            <p class="service__desc">Социализация и обучение в команде. Групповые занятия для дошкольников в Курске.</p>
           </article>
 
           <article class="service reveal" role="listitem" data-stagger="services">
-            <h3 class="service__title">Консультация для родителей</h3>
+            <h3 class="service__title">Консультация для родителей в Курске</h3>
             <div class="service__meta">60 мин / 500 руб</div>
-            <p class="service__desc">Как помочь ребенку с уроками.</p>
+            <p class="service__desc">Как помочь ребенку с уроками. Советы по подготовке дошкольника к школе в Курске.</p>
           </article>
         </div>
       </div>
@@ -848,6 +916,43 @@
               <div class="feature__text">После занятий — краткий отчет и рекомендации для дома.</div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="section" aria-label="Полезные статьи">
+      <div class="container">
+        <h2 class="section-title reveal">Полезные статьи для родителей в Курске</h2>
+        <p class="section-lead reveal">Отвечаю на популярные вопросы о подготовке дошкольников к школе в Курске</p>
+
+        <div class="blog-grid" role="list">
+          <article class="blog-card reveal" role="listitem" data-stagger="blog">
+            <div class="blog-card__icon">📚</div>
+            <h3 class="blog-card__title">Как понять, что ребенок готов к школе?</h3>
+            <p class="blog-card__text">Готовность к школе в Курске — это не только знание букв и цифр. Важны внимание, память, речь, мелкая моторика и социальные навыки. Если ребенок может сидеть 20–30 минут, слушать инструкции, выражать мысли — он готов к обучению. Запишитесь на диагностику в Курске, и мы вместе определим уровень готовности вашего дошкольника.</p>
+            <div class="blog-card__meta">Советы для родителей в Курске</div>
+          </article>
+
+          <article class="blog-card reveal" role="listitem" data-stagger="blog">
+            <div class="blog-card__icon">✏️</div>
+            <h3 class="blog-card__title">Что должен знать дошкольник перед 1 классом?</h3>
+            <p class="blog-card__text">Базовая подготовка к школе в Курске включает: чтение слогов и простых слов, счет до 20, основы письма (палочки, кружочки), ориентацию в пространстве и времени. На моих занятиях в Курске мы проходим всё это в игровой форме — без стресса и с удовольствием для ребенка.</p>
+            <div class="blog-card__meta">Подготовка дошкольников в Курске</div>
+          </article>
+
+          <article class="blog-card reveal" role="listitem" data-stagger="blog">
+            <div class="blog-card__icon">🎲</div>
+            <h3 class="blog-card__title">5 игр для обучения счету дома</h3>
+            <p class="blog-card__text">1) «Магазин» — считаем монетки при покупках. 2) «Пазлы с цифрами» — соединяем картинки. 3) «Лестница» — прыгаем по ступенькам и считаем. 4) «Счет вещей» — сколько носков, тарелок, игрушек. 5) «Настольные игры» — «Кошки-мышки», «Лото». На занятиях в Курске использую авторские игры для развития математического мышления.</p>
+            <div class="blog-card__meta">Обучение счету в Курске</div>
+          </article>
+
+          <article class="blog-card reveal" role="listitem" data-stagger="blog">
+            <div class="blog-card__icon">💰</div>
+            <h3 class="blog-card__title">Сколько стоят занятия с репетитором в Курске?</h3>
+            <p class="blog-card__text">В Курске цены на подготовку к школе варьируются от 400 до 1500 руб за занятие. Мои индивидуальные занятия стоят 500 рублей — это доступная цена за опыт репетитора и персональный подход. Занятия проходят в Курске в удобном районе (уточняйте при звонке) или онлайн. Пробное занятие поможет оценить подход бесплатно.</p>
+            <div class="blog-card__meta">Цены репетитора в Курске</div>
+          </article>
         </div>
       </div>
     </section>
