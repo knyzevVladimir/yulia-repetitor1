@@ -1046,19 +1046,72 @@
         return out;
       }
 
-      function isPhoneComplete(masked) {
-        return onlyDigits(masked).length === 11;
+      function countDigitsBefore(str, pos) {
+        var count = 0;
+        for (var i = 0; i < pos && i < str.length; i++) {
+          if (/\d/.test(str[i])) count++;
+        }
+        return count;
+      }
+
+      function findPositionByDigitCount(formatted, targetCount) {
+        var count = 0;
+        for (var i = 0; i < formatted.length; i++) {
+          if (/\d/.test(formatted[i])) count++;
+          if (count === targetCount) return i + 1;
+        }
+        return formatted.length;
       }
 
       phoneInput.addEventListener('input', function () {
         var start = phoneInput.selectionStart;
+        var end = phoneInput.selectionEnd;
         var before = phoneInput.value;
-        phoneInput.value = formatPhone(before);
-        try { phoneInput.setSelectionRange(start, start); } catch (e) {}
+        var digitCount = countDigitsBefore(before, start);
+        var wasAllSelected = start === 0 && end === before.length;
+        
+        var formatted = formatPhone(before);
+        phoneInput.value = formatted;
+        
+        if (wasAllSelected) {
+          phoneInput.setSelectionRange(formatted.length, formatted.length);
+        } else {
+          var newPos = findPositionByDigitCount(formatted, digitCount);
+          phoneInput.setSelectionRange(newPos, newPos);
+        }
       });
 
-      phoneInput.addEventListener('blur', function () {
-        phoneInput.value = formatPhone(phoneInput.value);
+      phoneInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Backspace' || e.key === 'Delete') {
+          var start = phoneInput.selectionStart;
+          var end = phoneInput.selectionEnd;
+          var val = phoneInput.value;
+          
+          if (start === end) {
+            var targetPos = e.key === 'Backspace' ? start - 1 : start;
+            while (targetPos >= 0 && targetPos < val.length && !/\d/.test(val[targetPos])) {
+              targetPos += e.key === 'Backspace' ? -1 : 1;
+            }
+            
+            if (targetPos >= 0 && /\d/.test(val[targetPos])) {
+              e.preventDefault();
+              var digits = onlyDigits(val);
+              var digitIndex = countDigitsBefore(val, targetPos + (e.key === 'Backspace' ? 1 : 0)) - (e.key === 'Backspace' ? 1 : 0);
+              digits = digits.slice(0, digitIndex) + digits.slice(digitIndex + 1);
+              var formatted = formatPhone(digits);
+              phoneInput.value = formatted;
+              var newPos = findPositionByDigitCount(formatted, digitIndex);
+              phoneInput.setSelectionRange(newPos, newPos);
+            }
+          }
+        }
+      });
+
+      phoneInput.addEventListener('focus', function () {
+        if (!phoneInput.value) {
+          phoneInput.value = '+7 ';
+          phoneInput.setSelectionRange(phoneInput.value.length, phoneInput.value.length);
+        }
       });
 
       function setInvalid(el, isInvalid) {
