@@ -1,0 +1,14 @@
+{
+  "name": "repetitor-yulia",
+  "version": "1.0.0",
+  "description": "Сайт-визитка репетитора Юлии Михайловны",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  },
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "author": "",
+  "license": "ISC"
+}
