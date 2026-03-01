@@ -17,7 +17,7 @@
     /* Basic reset */
     *, *::before, *::after { box-sizing: border-box; }
     * { margin: 0; }
-    html:focus-within { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; }
     body {
       min-height: 100vh;
       line-height: 1.5;
@@ -145,6 +145,10 @@
     }
     .section--hero {
       padding: 44px 0 56px;
+    }
+
+    #top, #about, #services, #why, #blog, #booking, #contacts {
+      scroll-margin-top: 84px;
     }
 
     @keyframes floatIn {
